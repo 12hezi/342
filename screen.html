@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<title>廉洁签名大屏</title>
+<style>
+    body{margin:0;width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,#f0f8f3,#e4f1eb);flex-direction:column;gap:30px}
+    .title{font-size:46px;color:#20603f}
+    .name{font-size:120px;font-weight:bold;color:#16472e}
+</style>
+
+<div class="title">廉洁承诺签名公示</div>
+<div class="name" id="show">等待签名</div>
+
+<script>
+function update() {
+    let n = window.location.hash.replace("#", "");
+    if (n) document.getElementById("show").innerText = decodeURIComponent(n);
+}
+setInterval(update, 500);
+update();
+</script>
+</body>
+</html>
